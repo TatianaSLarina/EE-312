@@ -20,7 +20,7 @@ to resolve conflict, open file and just change what need, save, git sees it. com
 
 process:
 $ git status      checks what's not on repo
-$ git add hello.c
+$ git add hello.c   add every time!
 $ git commit -m "second commit"
 $ git push -u origin master
 
