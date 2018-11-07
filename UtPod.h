@@ -19,26 +19,24 @@ class UtPod
       struct SongNode
       {
          Song s;
-         SongNode *next = nullptr;
+         SongNode *next;
       };
-      
-      SongNode *songs_head = nullptr;  //the head pointer
-	  SongNode *songs_last = nullptr;  //the tail pointer
-      
-	  //added this?
-	 //songs->next = NULL;
+      //NULLPTR WONT WORK ON KAMEK
+      SongNode *songs;  //the head pointer
 	  
-      int memSize = 0;
+      int memSize;
    
    public:
       //Default constructor
       //set the memory size to MAX_MEMORY
+	  // Seeds the random number generator for shuffling.
       UtPod();
 
       //Constructor with size parameter
       //The user of the class will pass in a size.
       //If the size is greater than MAX_MEMORY or less than or equal to 0,
       //set the size to MAX_MEMORY.
+	  // Seeds the random number generator for shuffling.
       UtPod(int size);
 
       /* FUNCTION - int addSong
@@ -48,9 +46,9 @@ class UtPod
 
        precondition: s is a valid Song
 
-       input parms -
+       input parms - song passed by reference (a pointer)
 
-       output parms -
+       output parms - integer to show success; song added at end of list
       */
 
       int addSong(Song const &song);
@@ -62,10 +60,9 @@ class UtPod
            o returns 0 if successful
            o returns -1 if nothing is removed
 
+         input parms - song passed by reference (a pointer)
 
-         input parms -
-
-         output parms -
+         output parms - int to indicate success; desired song is removed
       */
 
       int removeSong(Song const &song);
@@ -75,9 +72,9 @@ class UtPod
        *  shuffles the songs into random order
           o will do nothing if there are less than two songs in the current list
 
-         input parms -
+         input parms - none;
 
-         output parms -
+         output parms - none; should be shuffeled
       */
 
       void shuffle();
@@ -87,9 +84,9 @@ class UtPod
        * prints the current list of songs in order from first to last to standard output
        * format - Title, Artist, size in MB (one song per line)
 
-         input parms -
+         input parms - none
 
-         output parms -
+         output parms - Song list printed, or "No songs" message printed
       */
 
       void showSongList();
@@ -99,9 +96,9 @@ class UtPod
        *  sorts the songs in ascending order
           o will do nothing if there are less than two songs in the current list
 
-         input parms -
+         input parms - none
 
-         output parms -
+         output parms - none; songs sorted
       */
 
       void sortSongList();
@@ -110,9 +107,9 @@ class UtPod
       /* FUNCTION - void clearMemory
        * clears all the songs from memory
 
-         input parms -
+         input parms - none;
 
-         output parms -
+         output parms - none; all nodes should be removed, and head pointer is null
       */
       void clearMemory();
 
@@ -121,9 +118,9 @@ class UtPod
        *  returns the total amount of memory in the UtPod
           o will do nothing if there are less than two songs in the current list
 
-         input parms -
+         input parms - none
 
-         output parms -
+         output parms - integer that shows the remaining memory
       */
 
       int getTotalMemory() {
@@ -135,9 +132,9 @@ class UtPod
       /* FUNCTION - int getRemainingMemory
        *  returns the amount of memory available for adding new songs
 
-         input parms -
+         input parms - none
 
-         output parms -
+         output parms - int with remaining memory in it
       */
 
       int getRemainingMemory();

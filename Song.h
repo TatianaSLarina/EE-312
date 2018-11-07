@@ -34,9 +34,9 @@ class Song
 
        precondition: s is a valid Song
 
-       input parms -
+       input parms - none
 
-       output parms -
+       output parms - a string that matches the title
       */
 
       std::string getTitle() const
@@ -48,9 +48,9 @@ class Song
       /* FUNCTION - string getArtist
        * returns the author of the song in question
 
-         input parms -
+         input parms - none
 
-         output parms -
+         output parms - a string that matches the artist
       */
 
        std::string getArtist() const
@@ -60,9 +60,9 @@ class Song
 
       /* FUNCTION - string getSize
        *  returns the size of the song in question
-         input parms -
+         input parms - none
 
-         output parms -
+         output parms - an int that matches the size
       */
 
        int getSize() const
@@ -75,9 +75,9 @@ class Song
 
        precondition: s is a valid Song
 
-       input parms -
+       input parms - a string that is the desired title
 
-       output parms -
+       output parms - none
       */
 
       void setTitle(std::string s);
@@ -86,9 +86,9 @@ class Song
       /* FUNCTION - void setArtist
        * changes the author of the song in question
 
-         input parms -
+         input parms - a string that is the desired artist
 
-         output parms -
+         output parms - none
       */
 
        void setArtist(std::string s);
@@ -96,9 +96,9 @@ class Song
 
       /* FUNCTION - void setSize
        *  changes the size of the song in question
-         input parms -
+         input parms - an int that is the desired size
 
-         output parms -
+         output parms - none
       */
 
        void setSize(int s);
@@ -108,9 +108,9 @@ class Song
 		
       /* OVERLOADING OPERATORS
        *  allow comparison of songs
-         input parms -
+         input parms - a song that is passed by reference, corresponding to the right hand side of the operator
 
-         output parms -
+         output parms - the boolean true or false
       */
 	  
 	  

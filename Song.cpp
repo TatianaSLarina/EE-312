@@ -4,21 +4,22 @@
 
 using namespace std;
 
+	  //Default constructor
+      //set all fields to be blank
+	  
 	Song::Song()
 	 {
-		//cout<<"Constructing simple...(" << this << ")\n";
 		title = "";	 
 		artist = "";
 		size = 0;
 	 }
-	
+	  //Constructor with all parameters
+      //The user of the class will pass in all necessary information
 	Song::Song(string a, string t, int s)
 	 {
-		//cout<<"Constructing full...(" << this << ")\n";
 		title = t;	 
 		artist = a;
-		size = s;
-		//cout<<"Done"<<endl;		
+		size = s;	
 	 }
 
      
@@ -28,22 +29,23 @@ using namespace std;
 
        precondition: s is a valid Song
 
-       input parms -
+       input parms - a string that is the desired title
 
-       output parms -
+       output parms - none
       */
+
 
      void Song::setTitle(string s)
 		 {
 			 title = s; 
 		 }
 
-      /* FUNCTION - string setArtist
+      /* FUNCTION - void setArtist
        * changes the author of the song in question
 
-         input parms -
+         input parms - a string that is the desired artist
 
-         output parms -
+         output parms - none
       */
 
        void Song::setArtist(string s)
@@ -52,11 +54,11 @@ using namespace std;
 		 }
 
 
-      /* FUNCTION - string setSize
+      /* FUNCTION - void setSize
        *  changes the size of the song in question
-         input parms -
+         input parms - an int that is the desired size
 
-         output parms -
+         output parms - none
       */
 
        void Song::setSize(int s)
@@ -65,13 +67,12 @@ using namespace std;
 		}
 
 		
-      /* OVERLOADING OPERATORS
+  /* OVERLOADING OPERATORS
        *  allow comparison of songs
-         input parms -
+         input parms - a song that is passed by reference, corresponding to the right hand side of the operator
 
-         output parms -
+         output parms - the boolean true or false
       */
-	  
 	  
 	  
 	     bool Song::operator >(Song const &s)
@@ -150,5 +151,5 @@ using namespace std;
 
       Song::~Song()
 	  {
-		  // cout<<"destroying song"<<endl
+		  
 	  }
